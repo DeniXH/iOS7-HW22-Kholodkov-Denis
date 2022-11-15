@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9231B2F62923E72800B58136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2F52923E72800B58136 /* AppDelegate.swift */; };
+		9231B2FA2923E72800B58136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2F92923E72800B58136 /* ViewController.swift */; };
+		9231B3002923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2FE2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld */; };
+		9231B3022923E72C00B58136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9231B3012923E72C00B58136 /* Assets.xcassets */; };
+		9231B3052923E72C00B58136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9231B3032923E72C00B58136 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9231B2F22923E72800B58136 /* iOS7-HW22-Kholodkov Denis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS7-HW22-Kholodkov Denis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9231B2F52923E72800B58136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9231B2F92923E72800B58136 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9231B2FF2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS7_HW22_Kholodkov_Denis.xcdatamodel; sourceTree = "<group>"; };
+		9231B3012923E72C00B58136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9231B3042923E72C00B58136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9231B3062923E72C00B58136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9231B2EF2923E72800B58136 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9231B2E92923E72800B58136 = {
+			isa = PBXGroup;
+			children = (
+				9231B2F42923E72800B58136 /* iOS7-HW22-Kholodkov Denis */,
+				9231B2F32923E72800B58136 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9231B2F32923E72800B58136 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9231B2F22923E72800B58136 /* iOS7-HW22-Kholodkov Denis.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9231B2F42923E72800B58136 /* iOS7-HW22-Kholodkov Denis */ = {
+			isa = PBXGroup;
+			children = (
+				9231B30D2923E76D00B58136 /* Resources */,
+				9231B30C2923E76300B58136 /* Sources */,
+				9231B2FE2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld */,
+			);
+			path = "iOS7-HW22-Kholodkov Denis";
+			sourceTree = "<group>";
+		};
+		9231B30C2923E76300B58136 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9231B30E2923E77F00B58136 /* App */,
+				9231B3112923E7A200B58136 /* Presenter */,
+				9231B3102923E79600B58136 /* View */,
+				9231B30F2923E78B00B58136 /* Model */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9231B30D2923E76D00B58136 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9231B3012923E72C00B58136 /* Assets.xcassets */,
+				9231B3032923E72C00B58136 /* LaunchScreen.storyboard */,
+				9231B3062923E72C00B58136 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9231B30E2923E77F00B58136 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9231B2F52923E72800B58136 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9231B30F2923E78B00B58136 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9231B3102923E79600B58136 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9231B3132923E7C600B58136 /* ViewControllers */,
+				9231B3122923E7B500B58136 /* Views */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9231B3112923E7A200B58136 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9231B3122923E7B500B58136 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9231B3132923E7C600B58136 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9231B2F92923E72800B58136 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9231B2F12923E72800B58136 /* iOS7-HW22-Kholodkov Denis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9231B3092923E72C00B58136 /* Build configuration list for PBXNativeTarget "iOS7-HW22-Kholodkov Denis" */;
+			buildPhases = (
+				9231B2EE2923E72800B58136 /* Sources */,
+				9231B2EF2923E72800B58136 /* Frameworks */,
+				9231B2F02923E72800B58136 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS7-HW22-Kholodkov Denis";
+			productName = "iOS7-HW22-Kholodkov Denis";
+			productReference = 9231B2F22923E72800B58136 /* iOS7-HW22-Kholodkov Denis.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9231B2EA2923E72800B58136 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					9231B2F12923E72800B58136 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 9231B2ED2923E72800B58136 /* Build configuration list for PBXProject "iOS7-HW22-Kholodkov Denis" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9231B2E92923E72800B58136;
+			productRefGroup = 9231B2F32923E72800B58136 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9231B2F12923E72800B58136 /* iOS7-HW22-Kholodkov Denis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9231B2F02923E72800B58136 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9231B3052923E72C00B58136 /* LaunchScreen.storyboard in Resources */,
+				9231B3022923E72C00B58136 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9231B2EE2923E72800B58136 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9231B3002923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld in Sources */,
+				9231B2FA2923E72800B58136 /* ViewController.swift in Sources */,
+				9231B2F62923E72800B58136 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9231B3032923E72C00B58136 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9231B3042923E72C00B58136 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9231B3072923E72C00B58136 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9231B3082923E72C00B58136 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9231B30A2923E72C00B58136 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3L65F6AAP4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS7-HW22-Kholodkov Denis/Resources/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.denis.iOS7-HW22-Kholodkov-Denis";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9231B30B2923E72C00B58136 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3L65F6AAP4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS7-HW22-Kholodkov Denis/Resources/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.denis.iOS7-HW22-Kholodkov-Denis";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9231B2ED2923E72800B58136 /* Build configuration list for PBXProject "iOS7-HW22-Kholodkov Denis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9231B3072923E72C00B58136 /* Debug */,
+				9231B3082923E72C00B58136 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9231B3092923E72C00B58136 /* Build configuration list for PBXNativeTarget "iOS7-HW22-Kholodkov Denis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9231B30A2923E72C00B58136 /* Debug */,
+				9231B30B2923E72C00B58136 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9231B2FE2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9231B2FF2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodel */,
+			);
+			currentVersion = 9231B2FF2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodel */;
+			path = iOS7_HW22_Kholodkov_Denis.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9231B2EA2923E72800B58136 /* Project object */;
+}
