@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92171EF829250F5E00E61709 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92171EF729250F5E00E61709 /* MainScreenView.swift */; };
+		92171EFB2925654800E61709 /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92171EFA2925654800E61709 /* MainScreenCell.swift */; };
+		92171EFD29266ED100E61709 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92171EFC29266ED100E61709 /* MainScreenPresenter.swift */; };
 		9231B2F62923E72800B58136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2F52923E72800B58136 /* AppDelegate.swift */; };
-		9231B2FA2923E72800B58136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2F92923E72800B58136 /* ViewController.swift */; };
+		9231B2FA2923E72800B58136 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2F92923E72800B58136 /* MainViewController.swift */; };
 		9231B3002923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2FE2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld */; };
 		9231B3022923E72C00B58136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9231B3012923E72C00B58136 /* Assets.xcassets */; };
 		9231B3052923E72C00B58136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9231B3032923E72C00B58136 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92171EF729250F5E00E61709 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		92171EFA2925654800E61709 /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
+		92171EFC29266ED100E61709 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		9231B2F22923E72800B58136 /* iOS7-HW22-Kholodkov Denis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS7-HW22-Kholodkov Denis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9231B2F52923E72800B58136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9231B2F92923E72800B58136 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9231B2F92923E72800B58136 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9231B2FF2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS7_HW22_Kholodkov_Denis.xcdatamodel; sourceTree = "<group>"; };
 		9231B3012923E72C00B58136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9231B3042923E72C00B58136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +41,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92171EEC2924DF2E00E61709 /* MainScreenModules */ = {
+			isa = PBXGroup;
+			children = (
+				9231B30F2923E78B00B58136 /* Model */,
+				9231B3102923E79600B58136 /* View */,
+				9231B3112923E7A200B58136 /* Presenter */,
+			);
+			path = MainScreenModules;
+			sourceTree = "<group>";
+		};
+		92171EED2924DFA900E61709 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9231B2F92923E72800B58136 /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		92171EEE2924DFE000E61709 /* DetailScreenModules */ = {
+			isa = PBXGroup;
+			children = (
+				92171EEF2924DFFE00E61709 /* Model */,
+				92171EF02924E00600E61709 /* View */,
+				92171EF12924E01100E61709 /* Presenter */,
+			);
+			path = DetailScreenModules;
+			sourceTree = "<group>";
+		};
+		92171EEF2924DFFE00E61709 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92171EF02924E00600E61709 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92171EF32924E04200E61709 /* View */,
+				92171EF22924E03300E61709 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92171EF12924E01100E61709 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		92171EF22924E03300E61709 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		92171EF32924E04200E61709 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92171EF92925652E00E61709 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				92171EFA2925654800E61709 /* MainScreenCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		9231B2E92923E72800B58136 = {
 			isa = PBXGroup;
 			children = (
@@ -65,9 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				9231B30E2923E77F00B58136 /* App */,
-				9231B3112923E7A200B58136 /* Presenter */,
-				9231B3102923E79600B58136 /* View */,
-				9231B30F2923E78B00B58136 /* Model */,
+				92171EEC2924DF2E00E61709 /* MainScreenModules */,
+				92171EEE2924DFE000E61709 /* DetailScreenModules */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -100,8 +178,9 @@
 		9231B3102923E79600B58136 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9231B3132923E7C600B58136 /* ViewControllers */,
-				9231B3122923E7B500B58136 /* Views */,
+				92171EF92925652E00E61709 /* Cells */,
+				92171EED2924DFA900E61709 /* ViewController */,
+				9231B3122923E7B500B58136 /* View */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,23 +188,17 @@
 		9231B3112923E7A200B58136 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				92171EFC29266ED100E61709 /* MainScreenPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		9231B3122923E7B500B58136 /* Views */ = {
+		9231B3122923E7B500B58136 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				92171EF729250F5E00E61709 /* MainScreenView.swift */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		9231B3132923E7C600B58136 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				9231B2F92923E72800B58136 /* ViewController.swift */,
-			);
-			path = ViewControllers;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9231B3002923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld in Sources */,
-				9231B2FA2923E72800B58136 /* ViewController.swift in Sources */,
+				9231B2FA2923E72800B58136 /* MainViewController.swift in Sources */,
+				92171EFB2925654800E61709 /* MainScreenCell.swift in Sources */,
 				9231B2F62923E72800B58136 /* AppDelegate.swift in Sources */,
+				92171EF829250F5E00E61709 /* MainScreenView.swift in Sources */,
+				92171EFD29266ED100E61709 /* MainScreenPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
