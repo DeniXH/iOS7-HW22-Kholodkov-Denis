@@ -10,6 +10,13 @@
 		92171EF829250F5E00E61709 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92171EF729250F5E00E61709 /* MainScreenView.swift */; };
 		92171EFB2925654800E61709 /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92171EFA2925654800E61709 /* MainScreenCell.swift */; };
 		92171EFD29266ED100E61709 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92171EFC29266ED100E61709 /* MainScreenPresenter.swift */; };
+		922A91A5292BAA1C008E2B81 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91A3292BAA1C008E2B81 /* User+CoreDataClass.swift */; };
+		922A91A6292BAA1C008E2B81 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91A4292BAA1C008E2B81 /* User+CoreDataProperties.swift */; };
+		922A91A8292BD0AD008E2B81 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91A7292BD0AD008E2B81 /* CoreDataManager.swift */; };
+		922A91AA292C2E75008E2B81 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91A9292C2E74008E2B81 /* DetailViewController.swift */; };
+		922A91AC292C306F008E2B81 /* DetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91AB292C306F008E2B81 /* DetailScreenView.swift */; };
+		922A91AE292C308D008E2B81 /* DetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91AD292C308D008E2B81 /* DetailScreenPresenter.swift */; };
+		922A91B1292E3C02008E2B81 /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91B0292E3C02008E2B81 /* TextFieldWithPadding.swift */; };
 		9231B2F62923E72800B58136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2F52923E72800B58136 /* AppDelegate.swift */; };
 		9231B2FA2923E72800B58136 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2F92923E72800B58136 /* MainViewController.swift */; };
 		9231B3002923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2FE2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld */; };
@@ -21,6 +28,13 @@
 		92171EF729250F5E00E61709 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		92171EFA2925654800E61709 /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
 		92171EFC29266ED100E61709 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		922A91A3292BAA1C008E2B81 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		922A91A4292BAA1C008E2B81 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		922A91A7292BD0AD008E2B81 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		922A91A9292C2E74008E2B81 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		922A91AB292C306F008E2B81 /* DetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenView.swift; sourceTree = "<group>"; };
+		922A91AD292C308D008E2B81 /* DetailScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenPresenter.swift; sourceTree = "<group>"; };
+		922A91B0292E3C02008E2B81 /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
 		9231B2F22923E72800B58136 /* iOS7-HW22-Kholodkov Denis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS7-HW22-Kholodkov Denis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9231B2F52923E72800B58136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9231B2F92923E72800B58136 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +102,7 @@
 		92171EF12924E01100E61709 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				922A91AD292C308D008E2B81 /* DetailScreenPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -95,6 +110,7 @@
 		92171EF22924E03300E61709 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				922A91A9292C2E74008E2B81 /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -102,6 +118,7 @@
 		92171EF32924E04200E61709 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				922A91AB292C306F008E2B81 /* DetailScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,9 +131,19 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		922A91AF292E3BD7008E2B81 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				922A91B0292E3C02008E2B81 /* TextFieldWithPadding.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9231B2E92923E72800B58136 = {
 			isa = PBXGroup;
 			children = (
+				922A91A3292BAA1C008E2B81 /* User+CoreDataClass.swift */,
+				922A91A4292BAA1C008E2B81 /* User+CoreDataProperties.swift */,
 				9231B2F42923E72800B58136 /* iOS7-HW22-Kholodkov Denis */,
 				9231B2F32923E72800B58136 /* Products */,
 			);
@@ -143,6 +170,8 @@
 		9231B30C2923E76300B58136 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				922A91AF292E3BD7008E2B81 /* Extensions */,
+				922A91A7292BD0AD008E2B81 /* CoreDataManager.swift */,
 				9231B30E2923E77F00B58136 /* App */,
 				92171EEC2924DF2E00E61709 /* MainScreenModules */,
 				92171EEE2924DFE000E61709 /* DetailScreenModules */,
@@ -271,12 +300,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922A91AC292C306F008E2B81 /* DetailScreenView.swift in Sources */,
 				9231B3002923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld in Sources */,
 				9231B2FA2923E72800B58136 /* MainViewController.swift in Sources */,
+				922A91A6292BAA1C008E2B81 /* User+CoreDataProperties.swift in Sources */,
 				92171EFB2925654800E61709 /* MainScreenCell.swift in Sources */,
 				9231B2F62923E72800B58136 /* AppDelegate.swift in Sources */,
 				92171EF829250F5E00E61709 /* MainScreenView.swift in Sources */,
+				922A91A8292BD0AD008E2B81 /* CoreDataManager.swift in Sources */,
+				922A91AA292C2E75008E2B81 /* DetailViewController.swift in Sources */,
+				922A91B1292E3C02008E2B81 /* TextFieldWithPadding.swift in Sources */,
+				922A91AE292C308D008E2B81 /* DetailScreenPresenter.swift in Sources */,
 				92171EFD29266ED100E61709 /* MainScreenPresenter.swift in Sources */,
+				922A91A5292BAA1C008E2B81 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,12 @@ import UIKit
 
 protocol OutputMainScreenViewProtocol {
     var mainTableView: UITableView { get set }
+    var mainButton: UIButton { get set }
+    var mainTextField: UITextField { get set }
+    func addCell()
 }
 
-class MainScreenView: UIView, OutputMainScreenViewProtocol {
+class MainScreenView: UIView {
 
      // MARK: - UI Elements
 
@@ -27,10 +30,9 @@ class MainScreenView: UIView, OutputMainScreenViewProtocol {
 
      lazy var mainButton: UIButton = {
         let mainButton = UIButton()
-        mainButton.setTitle("Next Screen", for: .normal)
+        mainButton.setTitle("Add Cell", for: .normal)
         mainButton.backgroundColor = .white
         mainButton.setTitleColor(.black, for: .normal)
-        mainButton.addTarget(self, action: #selector(addCell), for: .touchUpInside)
         mainButton.layer.cornerRadius = 16
         mainButton.translatesAutoresizingMaskIntoConstraints = false
         return mainButton
@@ -39,10 +41,9 @@ class MainScreenView: UIView, OutputMainScreenViewProtocol {
      lazy var mainTableView: UITableView = {
         let mainTableView = UITableView(frame: .zero, style: .plain)
         mainTableView.backgroundColor = .white
-//        mainTableView.register(MainScreenCell.self, forCellReuseIdentifier: MainScreenCell.identifier)
          mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
          mainTableView.layer.cornerRadius = 16
-         mainTableView.backgroundColor = .magenta
+         mainTableView.backgroundColor = .cyan
         mainTableView.translatesAutoresizingMaskIntoConstraints = false
         return mainTableView
     }()
@@ -67,7 +68,7 @@ class MainScreenView: UIView, OutputMainScreenViewProtocol {
         addSubview(mainTableView)
     }
 
-    @objc func addCell() {}
+    @objc func addCell(word: String, complition: () -> Void) {}
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
@@ -87,5 +88,4 @@ class MainScreenView: UIView, OutputMainScreenViewProtocol {
             mainTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 40)
         ])
     }
-
 }

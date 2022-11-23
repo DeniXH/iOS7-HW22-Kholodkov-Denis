@@ -12,6 +12,7 @@ protocol InputMainScreenPresenterProtocol {
 
 protocol OutputMainScreenPresenterProtocol {
     var usersArray: [String]? { get set }
+    func addUser(user: String)
 }
 
 class MainScreenPresenter: OutputMainScreenPresenterProtocol {
@@ -22,7 +23,7 @@ class MainScreenPresenter: OutputMainScreenPresenterProtocol {
 
     // MARK: - functions
     
-    private func addUser(user: String) {
+     func addUser(user: String) {
         usersArray?.append(user)
     }
 }
