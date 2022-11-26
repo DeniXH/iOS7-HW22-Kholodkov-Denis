@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreData
+import AVKit
+import AVFoundation
 
 protocol InputMainViewProtocol {
   //  var mainScreenView: OutputMainScreenViewProtocol? { get set }
@@ -18,6 +20,7 @@ class MainViewController: UIViewController {
     // MARK: - varibles
 
    // var mainScreenView: OutputMainScreenViewProtocol?
+    var viewBefore = ViewBeforeStart()
     var mainScreenView = MainScreenView()
     var presenter: OutputMainScreenPresenterProtocol?
     var a = ""
@@ -30,14 +33,35 @@ class MainViewController: UIViewController {
 
     override func loadView() {
 //        mainScreenView = MainScreenView() as? OutputMainScreenViewProtocol
-        view = mainScreenView //as? UIView
+         //as? UIView
+       view = viewBefore
+        DispatchQueue.main.async {
+            let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "french", ofType: "mov")!))
+            let layer = AVPlayerLayer(player: player)
+            layer.frame = self.view.bounds
+            layer.videoGravity = .resizeAspectFill
+            player.volume = 3
+            self.view.layer.addSublayer(layer)
+            player.play()
+
+        }
     }
+
+// MARK: make by player
+//        let viewPlayer = AVPlayerViewController()
+//        viewPlayer.player = player
+//        present(viewPlayer, animated: true)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
-        setCoreData()
-        UIElementsSettings()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+
+            self.view = self.mainScreenView
+            self.view.backgroundColor = .white
+            self.setNavigationController()
+            self.setCoreData()
+            self.UIElementsSettings()
+        }
     }
 
     // MARK: - function for set CoreData
@@ -97,6 +121,12 @@ class MainViewController: UIViewController {
     func setDelegateAndDataSource() {
         mainScreenView.mainTableView.dataSource = self
         mainScreenView.mainTableView.delegate = self
+    }
+
+    func setNavigationController() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.title = "Users"
     }
 
     func UIElementsSettings() {

@@ -21,29 +21,29 @@ class MainScreenView: UIView {
      lazy var mainTextField: UITextField = {
         let mainTextField = UITextField()
         mainTextField.textAlignment = .center
-        mainTextField.backgroundColor = .white
-        mainTextField.textColor = .orange
-        mainTextField.layer.cornerRadius = 16
+        mainTextField.backgroundColor = .systemGray5
+        mainTextField.placeholder = MetricStrings.placeholder
+        mainTextField.borderStyle = .roundedRect
+        mainTextField.layer.cornerRadius = Metric.cornerRadius
         mainTextField.translatesAutoresizingMaskIntoConstraints = false
         return mainTextField
     }()
 
      lazy var mainButton: UIButton = {
         let mainButton = UIButton()
-        mainButton.setTitle("Add Cell", for: .normal)
-        mainButton.backgroundColor = .white
-        mainButton.setTitleColor(.black, for: .normal)
-        mainButton.layer.cornerRadius = 16
+        mainButton.setTitle(MetricStrings.titleButton, for: .normal)
+        mainButton.backgroundColor = .systemBlue
+        mainButton.setTitleColor(.white, for: .normal)
+        mainButton.layer.cornerRadius = Metric.cornerRadius
         mainButton.translatesAutoresizingMaskIntoConstraints = false
         return mainButton
     }()
 
      lazy var mainTableView: UITableView = {
         let mainTableView = UITableView(frame: .zero, style: .plain)
-        mainTableView.backgroundColor = .white
+         mainTableView.backgroundColor = .systemGray5
          mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-         mainTableView.layer.cornerRadius = 16
-         mainTableView.backgroundColor = .cyan
+         mainTableView.layer.cornerRadius = Metric.cornerRadius
         mainTableView.translatesAutoresizingMaskIntoConstraints = false
         return mainTableView
     }()
@@ -87,5 +87,17 @@ class MainScreenView: UIView {
             mainTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
             mainTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 40)
         ])
+    }
+}
+
+extension MainScreenView {
+
+    enum Metric {
+        static let cornerRadius: CGFloat = 14
+    }
+
+    enum MetricStrings {
+        static let placeholder = "Print your name here"
+        static let titleButton = "Add user"
     }
 }

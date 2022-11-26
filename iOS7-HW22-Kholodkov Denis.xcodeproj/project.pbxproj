@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		92171EF829250F5E00E61709 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92171EF729250F5E00E61709 /* MainScreenView.swift */; };
-		92171EFB2925654800E61709 /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92171EFA2925654800E61709 /* MainScreenCell.swift */; };
 		92171EFD29266ED100E61709 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92171EFC29266ED100E61709 /* MainScreenPresenter.swift */; };
 		922A91A5292BAA1C008E2B81 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91A3292BAA1C008E2B81 /* User+CoreDataClass.swift */; };
 		922A91A6292BAA1C008E2B81 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91A4292BAA1C008E2B81 /* User+CoreDataProperties.swift */; };
@@ -17,6 +16,8 @@
 		922A91AC292C306F008E2B81 /* DetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91AB292C306F008E2B81 /* DetailScreenView.swift */; };
 		922A91AE292C308D008E2B81 /* DetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91AD292C308D008E2B81 /* DetailScreenPresenter.swift */; };
 		922A91B1292E3C02008E2B81 /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91B0292E3C02008E2B81 /* TextFieldWithPadding.swift */; };
+		922A91B429315D0D008E2B81 /* french.mov in Resources */ = {isa = PBXBuildFile; fileRef = 922A91B329315D0C008E2B81 /* french.mov */; };
+		922A91B62931714F008E2B81 /* ViewBeforeStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A91B52931714F008E2B81 /* ViewBeforeStart.swift */; };
 		9231B2F62923E72800B58136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2F52923E72800B58136 /* AppDelegate.swift */; };
 		9231B2FA2923E72800B58136 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2F92923E72800B58136 /* MainViewController.swift */; };
 		9231B3002923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2FE2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld */; };
@@ -26,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		92171EF729250F5E00E61709 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
-		92171EFA2925654800E61709 /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
 		92171EFC29266ED100E61709 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		922A91A3292BAA1C008E2B81 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		922A91A4292BAA1C008E2B81 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -35,6 +35,8 @@
 		922A91AB292C306F008E2B81 /* DetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenView.swift; sourceTree = "<group>"; };
 		922A91AD292C308D008E2B81 /* DetailScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenPresenter.swift; sourceTree = "<group>"; };
 		922A91B0292E3C02008E2B81 /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
+		922A91B329315D0C008E2B81 /* french.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = french.mov; sourceTree = "<group>"; };
+		922A91B52931714F008E2B81 /* ViewBeforeStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBeforeStart.swift; sourceTree = "<group>"; };
 		9231B2F22923E72800B58136 /* iOS7-HW22-Kholodkov Denis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS7-HW22-Kholodkov Denis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9231B2F52923E72800B58136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9231B2F92923E72800B58136 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -123,14 +125,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		92171EF92925652E00E61709 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				92171EFA2925654800E61709 /* MainScreenCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		922A91AF292E3BD7008E2B81 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +136,8 @@
 		9231B2E92923E72800B58136 = {
 			isa = PBXGroup;
 			children = (
+				922A91B52931714F008E2B81 /* ViewBeforeStart.swift */,
+				922A91B329315D0C008E2B81 /* french.mov */,
 				922A91A3292BAA1C008E2B81 /* User+CoreDataClass.swift */,
 				922A91A4292BAA1C008E2B81 /* User+CoreDataProperties.swift */,
 				9231B2F42923E72800B58136 /* iOS7-HW22-Kholodkov Denis */,
@@ -207,7 +203,6 @@
 		9231B3102923E79600B58136 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				92171EF92925652E00E61709 /* Cells */,
 				92171EED2924DFA900E61709 /* ViewController */,
 				9231B3122923E7B500B58136 /* View */,
 			);
@@ -289,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9231B3052923E72C00B58136 /* LaunchScreen.storyboard in Resources */,
+				922A91B429315D0D008E2B81 /* french.mov in Resources */,
 				9231B3022923E72C00B58136 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,11 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922A91B62931714F008E2B81 /* ViewBeforeStart.swift in Sources */,
 				922A91AC292C306F008E2B81 /* DetailScreenView.swift in Sources */,
 				9231B3002923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld in Sources */,
 				9231B2FA2923E72800B58136 /* MainViewController.swift in Sources */,
 				922A91A6292BAA1C008E2B81 /* User+CoreDataProperties.swift in Sources */,
-				92171EFB2925654800E61709 /* MainScreenCell.swift in Sources */,
 				9231B2F62923E72800B58136 /* AppDelegate.swift in Sources */,
 				92171EF829250F5E00E61709 /* MainScreenView.swift in Sources */,
 				922A91A8292BD0AD008E2B81 /* CoreDataManager.swift in Sources */,
