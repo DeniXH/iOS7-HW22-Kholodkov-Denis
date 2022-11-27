@@ -60,7 +60,6 @@
 		92171EEC2924DF2E00E61709 /* MainScreenModules */ = {
 			isa = PBXGroup;
 			children = (
-				9231B30F2923E78B00B58136 /* Model */,
 				9231B3102923E79600B58136 /* View */,
 				9231B3112923E7A200B58136 /* Presenter */,
 			);
@@ -78,18 +77,10 @@
 		92171EEE2924DFE000E61709 /* DetailScreenModules */ = {
 			isa = PBXGroup;
 			children = (
-				92171EEF2924DFFE00E61709 /* Model */,
 				92171EF02924E00600E61709 /* View */,
 				92171EF12924E01100E61709 /* Presenter */,
 			);
 			path = DetailScreenModules;
-			sourceTree = "<group>";
-		};
-		92171EEF2924DFFE00E61709 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		92171EF02924E00600E61709 /* View */ = {
@@ -191,13 +182,6 @@
 				9231B2F52923E72800B58136 /* AppDelegate.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		9231B30F2923E78B00B58136 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		9231B3102923E79600B58136 /* View */ = {
