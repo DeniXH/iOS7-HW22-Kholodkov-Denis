@@ -42,15 +42,35 @@ class DetailScreenView: UIView {
 
     // MARK: - first stack
 
-    private lazy var stackIconAndSeparators: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.alignment = .leading
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
+//     lazy var stackIconAndSeparators: UIStackView = {
+//        let stackView = UIStackView()
+//        stackView.axis = .vertical
+//        stackView.distribution = .fillEqually
+//        stackView.alignment = .leading
+//        stackView.spacing = 25
+//        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        return stackView
+//    }()
+    
+    lazy var stackIconAndSeparators: UIStackView = {
+       let stackView = UIStackView()
+       stackView.axis = .vertical
+       stackView.distribution = .fillEqually
+       stackView.alignment = .leading
+       stackView.spacing = 25
+       stackView.translatesAutoresizingMaskIntoConstraints = false
+       return stackView
+   }()
+    
+    lazy var stackProperties: UIStackView = {
+       let stackView = UIStackView()
+       stackView.axis = .vertical
+       stackView.distribution = .fillEqually
+       stackView.alignment = .leading
+       stackView.spacing = 25
+       stackView.translatesAutoresizingMaskIntoConstraints = false
+       return stackView
+   }()
 
 //    lazy var stackUserName: UIStackView = {
 //        let stackView = UIStackView()
@@ -82,16 +102,17 @@ class DetailScreenView: UIView {
     lazy var detailUserNameImage: UIImageView = {
        let detailUserNameImage = UIImage(systemName: "person.fill")
        let detailUserNameImageView = UIImageView(image: detailUserNameImage)
-       detailUserNameImageView.contentMode = .scaleAspectFit
+        detailUserNameImageView.contentMode = .scaleAspectFill
        detailUserNameImageView.translatesAutoresizingMaskIntoConstraints = false
        return detailUserNameImageView
    }()
 
     lazy var separatorFirst: UIView = {
-        let view = UIView()
-        view.backgroundColor = .separator
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        let separatorFirst = UIView()
+        separatorFirst.backgroundColor = .separator
+       // separatorFirst.heightAnchor.constraint(equalToConstant: 2).isActive = true
+        separatorFirst.translatesAutoresizingMaskIntoConstraints = false
+        return separatorFirst
     }()
 
     lazy var separatorSecond: UIView = {
@@ -157,9 +178,9 @@ class DetailScreenView: UIView {
     lazy var detailUserBirthDayImage: UIImageView = {
        let detailUserImage = UIImage(systemName: "birthday.cake.fill")
        let detailUserView = UIImageView(image: detailUserImage)
-        let screenSize: CGRect = UIScreen.main.bounds
-        detailUserView.frame = CGRect(x: 0, y: 0, width: 50, height: screenSize.height * 0.2)
-        detailUserView.contentMode = .scaleAspectFit
+//        let screenSize: CGRect = UIScreen.main.bounds
+//        detailUserView.frame = CGRect(x: 0, y: 0, width: 50, height: screenSize.height * 0.2)
+        detailUserView.contentMode = .scaleAspectFill
         detailUserView.translatesAutoresizingMaskIntoConstraints = false
        return detailUserView
    }()
@@ -187,7 +208,7 @@ class DetailScreenView: UIView {
      lazy var detailUserGenderImage: UIImageView = {
         let detailUserGenderImage = UIImage(systemName: "figure.dress.line.vertical.figure")
         let detailUserGenderImageView = UIImageView(image: detailUserGenderImage)
-         detailUserGenderImageView.contentMode = .scaleAspectFit
+         detailUserGenderImageView.contentMode = .scaleAspectFill
          detailUserGenderImageView.translatesAutoresizingMaskIntoConstraints = false
         return detailUserGenderImageView
     }()
@@ -263,22 +284,17 @@ class DetailScreenView: UIView {
             stackIconAndSeparators.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
             stackIconAndSeparators.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
 
-//            stackUserName.topAnchor.constraint(equalTo: detailPhoto.bottomAnchor, constant: 30),
-//            stackUserName.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-//            stackUserName.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-
-//            separatorFirst.topAnchor.constraint(equalTo: stackUserName.bottomAnchor, constant: 5),
-//            separatorFirst.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-//            separatorFirst.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-//            separatorFirst.heightAnchor.constraint(equalToConstant: 2),
+            separatorFirst.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            separatorFirst.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            separatorFirst.heightAnchor.constraint(equalToConstant: 2),
 
 //            stackPicker.topAnchor.constraint(equalTo: separatorFirst.bottomAnchor, constant: 5),
 //            stackPicker.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
 //            stackPicker.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
 
-//            detailUserBirthDayImage.topAnchor.constraint(equalTo: stackUserName.bottomAnchor, constant: 15),
-//            detailUserBirthDayImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8),
-//            detailUserBirthDayImage.widthAnchor.constraint(equalTo: detailUserNameImage.widthAnchor),
+ //           detailUserBirthDayImage.topAnchor.constraint(equalTo: stackUserName.bottomAnchor, constant: 15),
+//            detailUserBirthDayImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), //
+//            detailUserBirthDayImage.widthAnchor.constraint(equalTo: detailUserNameImage.widthAnchor),//
 
          //   datePicker.topAnchor.constraint(equalTo: stackUserName.bottomAnchor, constant: 14),
 //            datePicker.leadingAnchor.constraint(equalTo: detailUserBirthDayImage.trailingAnchor, constant: 1),
@@ -286,13 +302,13 @@ class DetailScreenView: UIView {
 //                        datePicker.heightAnchor.constraint(equalToConstant: 30),
 
 //            separatorSecond.topAnchor.constraint(equalTo: separatorFirst.bottomAnchor, constant: 45),
-//            separatorSecond.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-//            separatorSecond.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-//            separatorSecond.heightAnchor.constraint(equalToConstant: 2),
+            separatorSecond.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            separatorSecond.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            separatorSecond.heightAnchor.constraint(equalToConstant: 2),
 
 //            detailUserGenderImage.topAnchor.constraint(equalTo: separatorSecond.bottomAnchor, constant: 10),
-//            detailUserGenderImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8),
-//            detailUserGenderImage.widthAnchor.constraint(equalTo: detailUserNameImage.widthAnchor),
+//            detailUserGenderImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), //
+//            detailUserGenderImage.widthAnchor.constraint(equalTo: detailUserNameImage.widthAnchor),//
 
 //            detailGenderTextField.topAnchor.constraint(equalTo: separatorSecond.bottomAnchor, constant: 10),
 //            detailGenderTextField.leadingAnchor.constraint(equalTo: detailUserGenderImage.trailingAnchor, constant: 1),
@@ -300,9 +316,9 @@ class DetailScreenView: UIView {
 //            detailGenderTextField.heightAnchor.constraint(equalToConstant: 30),
 //
 //            separatorThird.topAnchor.constraint(equalTo: separatorSecond.bottomAnchor, constant: 45),
-//            separatorThird.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-//            separatorThird.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-//            separatorThird.heightAnchor.constraint(equalToConstant: 2),
+            separatorThird.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            separatorThird.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            separatorThird.heightAnchor.constraint(equalToConstant: 2),
         ])
     }
 }
