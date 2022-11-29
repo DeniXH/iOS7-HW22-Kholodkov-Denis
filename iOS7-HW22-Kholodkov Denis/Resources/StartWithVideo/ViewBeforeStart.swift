@@ -10,7 +10,7 @@ import UIKit
 class ViewBeforeStart: UIView {
 
     private lazy var viewBefore: UIView = {
-      let viewBefore = UIView()
+        let viewBefore = UIView()
         return viewBefore
     }()
 
@@ -25,16 +25,16 @@ class ViewBeforeStart: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-  private func setupHierarchy() {
+    private func setupHierarchy() {
         addSubview(viewBefore)
     }
 
-  private func setupLayout() {
-      NSLayoutConstraint.activate([
-        viewBefore.leadingAnchor.constraint(equalTo: leadingAnchor),
-        viewBefore.trailingAnchor.constraint(equalTo: trailingAnchor),
-        viewBefore.topAnchor.constraint(equalTo: topAnchor),
-        viewBefore.bottomAnchor.constraint(equalTo: bottomAnchor)
-      ])
+    private func setupLayout() {
+        NSLayoutConstraint.activate([
+            viewBefore.leadingAnchor.constraint(equalTo: leadingAnchor),
+            viewBefore.trailingAnchor.constraint(equalTo: trailingAnchor),
+            viewBefore.topAnchor.constraint(equalTo: topAnchor),
+            viewBefore.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }

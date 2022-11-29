@@ -52,6 +52,8 @@ class MainViewController: UIViewController {
 //        viewPlayer.player = player
 //        present(viewPlayer, animated: true)
 
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
@@ -136,9 +138,6 @@ class MainViewController: UIViewController {
     }
 
     @objc func addCellToTable() {
-
-
-
         guard let inputText = mainScreenView.mainTextField.text else { return }
         //a = inputText
         usersArray.append(inputText)

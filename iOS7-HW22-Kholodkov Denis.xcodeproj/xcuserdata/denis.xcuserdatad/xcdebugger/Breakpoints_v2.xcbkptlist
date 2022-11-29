@@ -14,8 +14,8 @@
             filePath = "iOS7-HW22-Kholodkov Denis/Sources/MainScreenModules/View/ViewController/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "iOS7-HW22-Kholodkov Denis/Sources/MainScreenModules/View/ViewController/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "setDelegateAndDataSource()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "iOS7-HW22-Kholodkov Denis/Sources/MainScreenModules/View/ViewController/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,10 +78,17 @@
             filePath = "iOS7-HW22-Kholodkov Denis/Sources/DetailScreenModules/View/View/DetailScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "tapUserName()"
+            landmarkType = "7">
+
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "DetailScreenView"
             landmarkType = "3">
+
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,9 +101,15 @@
             filePath = "iOS7-HW22-Kholodkov Denis/Sources/DetailScreenModules/View/View/DetailScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "detailUserName"
+
             startingLineNumber = "69"
             endingLineNumber = "69"
             landmarkName = "stackProperties"
+
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,6 +123,11 @@
             filePath = "iOS7-HW22-Kholodkov Denis/Sources/DetailScreenModules/View/View/DetailScreenView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "setupHierarchy()"
+
             startingLineNumber = "240"
             endingLineNumber = "240"
             landmarkName = "init(frame:)"
@@ -129,6 +147,7 @@
             startingLineNumber = "242"
             endingLineNumber = "242"
             landmarkName = "init(frame:)"
+
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
