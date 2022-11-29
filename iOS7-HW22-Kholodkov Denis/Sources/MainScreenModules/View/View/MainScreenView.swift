@@ -16,9 +16,9 @@ protocol OutputMainScreenViewProtocol {
 
 class MainScreenView: UIView {
 
-     // MARK: - UI Elements
+    // MARK: - UI Elements
 
-     lazy var mainTextField: UITextField = {
+    lazy var mainTextField: UITextField = {
         let mainTextField = UITextField()
         mainTextField.textAlignment = .center
         mainTextField.backgroundColor = .systemGray5
@@ -29,7 +29,7 @@ class MainScreenView: UIView {
         return mainTextField
     }()
 
-     lazy var mainButton: UIButton = {
+    lazy var mainButton: UIButton = {
         let mainButton = UIButton()
         mainButton.setTitle(MetricStrings.titleButton, for: .normal)
         mainButton.backgroundColor = .systemBlue
@@ -39,11 +39,11 @@ class MainScreenView: UIView {
         return mainButton
     }()
 
-     lazy var mainTableView: UITableView = {
-        let mainTableView = UITableView(frame: .zero, style: .plain)
-         mainTableView.backgroundColor = .systemGray5
-         mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-         mainTableView.layer.cornerRadius = Metric.cornerRadius
+    lazy var mainTableView: UITableView = {
+        let mainTableView = UITableView(frame: .zero, style: .insetGrouped)
+        mainTableView.backgroundColor = .systemGray5
+        mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        mainTableView.layer.cornerRadius = Metric.cornerRadius
         mainTableView.translatesAutoresizingMaskIntoConstraints = false
         return mainTableView
     }()
@@ -72,20 +72,20 @@ class MainScreenView: UIView {
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            mainTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            mainTextField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            mainTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            mainTextField.heightAnchor.constraint(equalToConstant: 60),
+            mainTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.insetTwenty),
+                       mainTextField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Metric.insetTwenty),
+                       mainTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Metric.insetMinusTwenty),
+                       mainTextField.heightAnchor.constraint(equalToConstant: Metric.insetHeight),
 
-            mainButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
-            mainButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            mainButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            mainButton.heightAnchor.constraint(equalToConstant: 60),
+                       mainButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.insetTopMainButton),
+                       mainButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Metric.insetTwenty),
+                       mainButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Metric.insetMinusTwenty),
+                       mainButton.heightAnchor.constraint(equalToConstant: Metric.insetHeight),
 
-            mainTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 180),
-            mainTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            mainTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            mainTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 40)
+                       mainTableView.topAnchor.constraint(equalTo: mainButton.bottomAnchor, constant: Metric.insetTopMainTableView),
+                       mainTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+                       mainTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+                       mainTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
@@ -94,6 +94,11 @@ extension MainScreenView {
 
     enum Metric {
         static let cornerRadius: CGFloat = 14
+        static let insetTopMainButton: CGFloat = 100
+        static let insetTopMainTableView: CGFloat = 30
+        static let insetTwenty: CGFloat = 20
+        static let insetMinusTwenty: CGFloat = -20
+        static let insetHeight: CGFloat = 60
     }
 
     enum MetricStrings {

@@ -13,15 +13,16 @@ protocol OutputDetailScreenViewProtocol {
 
 class DetailScreenView: UIView {
 
+    // MARK: - Varibles
     var isOn = false
-    let gender = ["Мужчина", "Женщина"]
-    // MARK: - UI Elements
+    let gender = [MetricStrings.men, MetricStrings.women]
 
-     lazy var rightButtonItem: UIBarButtonItem = {
+    // MARK: - UI Elements
+    lazy var rightButtonItem: UIBarButtonItem = {
         let button = UIBarButtonItem()
         button.action = #selector(editAction)
         button.target = self
-        button.title = "Edit"
+        button.title = MetricStrings.buttonEditTitle
         return button
     }()
 
@@ -29,263 +30,150 @@ class DetailScreenView: UIView {
         detailUserName.isEnabled.toggle()
     }
 
-     lazy var detailPhoto: UIImageView = {
-        let detailImageView = UIImageView(image: UIImage(systemName: "photo.circle.fill"))
-//        let detailimageTapped = UITapGestureRecognizer(target: self, action: #selector(detailimageTapped))
-         //detailimageView.addGestureRecognizer(detailimageTapped)
-         detailImageView.clipsToBounds = true
-         detailImageView.layer.cornerRadius = 125
-         detailImageView.translatesAutoresizingMaskIntoConstraints = false
+    lazy var detailPhoto: UIImageView = {
+        let detailImageView = UIImageView(image: UIImage(systemName: MetricStrings.detailPhotoImage))
+        //        let detailimageTapped = UITapGestureRecognizer(target: self, action: #selector(detailimageTapped))
+        //detailimageView.addGestureRecognizer(detailimageTapped)
+        detailImageView.clipsToBounds = true
+        detailImageView.layer.cornerRadius = Metric.detailPhotoCornerRadius
+        detailImageView.translatesAutoresizingMaskIntoConstraints = false
         return detailImageView
     }()
 
 
-    // MARK: - first stack
+    // MARK: - Vertical main stack
+    lazy var stackMainVertical = StackUI(axis: .vertical,
+                                         spacing: Metric.stackSpacingBase)
 
-    lazy var stackUserName: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-       // stackView.alignment = .center
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
+    // MARK: - Separators
+    lazy var separatorFirst = Separator()
+    lazy var separatorSecond = Separator()
+    lazy var separatorThird = Separator()
 
-     lazy var detailUserName: UITextField = {
+    // MARK: - User name stack
+    lazy var stackUserName = StackUI(axis: .horizontal,
+                                     spacing: Metric.stackSpacingBase)
+
+    lazy var detailUserNameImage = ImageIcon(imageName: MetricStrings.detailUserNameImage)
+
+    lazy var detailUserName: UITextField = {
         let detailUserName = TextFieldWithPadding()
-        detailUserName.placeholder = "Name"
+        detailUserName.placeholder = MetricStrings.userNamePlaceholder
         detailUserName.isEnabled = isOn
-         detailUserName.addTarget(self, action: #selector(tapUserName), for: .touchDown)
+        detailUserName.addTarget(self, action: #selector(tapUserName), for: .touchDown)
         detailUserName.leftView = detailUserNameImage
         detailUserName.leftViewMode = .always
-        detailUserName.font = UIFont.systemFont(ofSize: 22)
+        detailUserName.font = UIFont.systemFont(ofSize: Metric.fontSize)
         detailUserName.translatesAutoresizingMaskIntoConstraints = false
         return detailUserName
     }()
 
     @objc func tapUserName() {
-     //   detailUserName.isEnabled.toggle()
+        //   detailUserName.isEnabled.toggle()
         print("textField touches")
     }
 
-    lazy var detailUserNameImage: UIImageView = {
-       let detailUserNameImage = UIImage(systemName: "person.fill")
-       let detailUserNameImageView = UIImageView(image: detailUserNameImage)
-       detailUserNameImageView.contentMode = .scaleAspectFit
-       detailUserNameImageView.translatesAutoresizingMaskIntoConstraints = false
-       return detailUserNameImageView
-   }()
+    // MARK: - Birthday Stack
+    lazy var stackBirthday = StackUI(axis: .horizontal,
+                                     spacing: Metric.stackSpacingBase)
 
-    lazy var separatorFirst: UIView = {
-        let view = UIView()
-        view.backgroundColor = .separator
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    lazy var detailUserBirthDayImage = ImageIcon(imageName: MetricStrings.detailUserNameBirthdayImage)
 
-    lazy var separatorSecond: UIView = {
-        let view = UIView()
-        view.backgroundColor = .separator
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    lazy var separatorThird: UIView = {
-        let view = UIView()
-        view.backgroundColor = .separator
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-//     lazy var detailUserBirthDay: UITextField = {
-//        let detailUserBirthDay = UITextField()
-//        // detailUserBirthDay.isEnabled = isEditEnable
-//         detailUserBirthDay.placeholder = "Birthday"
-//         detailUserBirthDay.leftView = detailUserBirthDayImage
-//         detailUserBirthDay.leftViewMode = .always
-//         detailUserBirthDay.font = UIFont.systemFont(ofSize: 22)
-//        return detailUserBirthDay
-//    }()
-
-
-    // MARK: - second stack
-
-    lazy var stackPicker: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.alignment = .leading
-        stackView.spacing = 2
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-
-
-     lazy var datePicker: UIDatePicker = {
-       let datepicker = UIDatePicker()//frame: CGRect(x: 50, y: 125, width: 200, height: 50))
+    lazy var datePicker: UIDatePicker = {
+        let datepicker = UIDatePicker()
         datepicker.timeZone = NSTimeZone.local
         datepicker.backgroundColor = UIColor.clear
-        datepicker.preferredDatePickerStyle = .compact
+        datepicker.preferredDatePickerStyle = .automatic
         datepicker.datePickerMode = .date
-        datepicker.layer.cornerRadius = 16
+        datepicker.layer.cornerRadius = Metric.datePickerCornerRadius
+        datepicker.contentHorizontalAlignment = .leading // for left orietation near icon
         datepicker.translatesAutoresizingMaskIntoConstraints = false
         datepicker.addTarget(self, action: #selector(pickerTapped), for: .valueChanged)
-     //   datePicker.subviews.forEach({ $0.subviews.forEach({ $0.removeFromSuperview() }) })
+        //   datePicker.subviews.forEach({ $0.subviews.forEach({ $0.removeFromSuperview() }) })
         return datepicker
     }()
 
     @objc func pickerTapped() {
         let dateFormatter: DateFormatter = DateFormatter()
-
-        dateFormatter.dateFormat = "MM.dd.yyyy"
-
+        dateFormatter.dateFormat = MetricStrings.datePickerFormat
         let selectedDate: String = dateFormatter.string(from: datePicker.date)
-
         print("Selected value \(selectedDate)")
     }
 
-    lazy var detailUserBirthDayImage: UIImageView = {
-       let detailUserImage = UIImage(systemName: "birthday.cake.fill")
-       let detailUserView = UIImageView(image: detailUserImage)
-        let screenSize: CGRect = UIScreen.main.bounds
-        detailUserView.frame = CGRect(x: 0, y: 0, width: 50, height: screenSize.height * 0.2)
-        detailUserView.contentMode = .scaleAspectFit
-        detailUserView.translatesAutoresizingMaskIntoConstraints = false
-       return detailUserView
-   }()
-
     // MARK: - Gender part
-//     lazy var detailUserGender: UITextField = {
-//        let detailUserGender = UITextField()
-//        // detailUserGender.isEnabled = isEditEnable
-//        detailUserGender.placeholder = "Gender"
-//        detailUserGender.leftView = detailUserGenderImage
-//        detailUserGender.leftViewMode = .always
-//        detailUserGender.font = UIFont.systemFont(ofSize: 22)
-//        detailUserGender.translatesAutoresizingMaskIntoConstraints = false
-//        return detailUserGender
-//    }()
-
-//    lazy var genderPicker: UIPickerView = {
-//        let genderPicker = UIPickerView()
-//        genderPicker.translatesAutoresizingMaskIntoConstraints = false
-//        return genderPicker
-//    }()
+    lazy var stackPicker = StackUI(axis: .horizontal,
+                                   spacing: Metric.stackPickerSpacing)
 
 
-
-     lazy var detailUserGenderImage: UIImageView = {
-        let detailUserGenderImage = UIImage(systemName: "figure.dress.line.vertical.figure")
-        let detailUserGenderImageView = UIImageView(image: detailUserGenderImage)
-         detailUserGenderImageView.contentMode = .scaleAspectFit
-         detailUserGenderImageView.translatesAutoresizingMaskIntoConstraints = false
-        return detailUserGenderImageView
-    }()
+    lazy var detailUserGenderImage = ImageIcon(imageName: MetricStrings.detailUserNameGenderImage)
 
     lazy var detailGenderTextField: UITextField = {
-       let detailUserName = TextFieldWithPadding()
-       detailUserName.placeholder = "Gender"
-      // detailUserName.isEnabled = isOn
+        let detailUserName = TextFieldWithPadding()
+        detailUserName.placeholder = MetricStrings.detailGenderPlaceholder
+        // detailUserName.isEnabled = isOn
         detailUserName.addTarget(self, action: #selector(tapUserName), for: .touchDown)
-     //  detailUserName.leftView = detailUserNameImage
-       detailUserName.leftViewMode = .always
-       detailUserName.font = UIFont.systemFont(ofSize: 22)
-       detailUserName.translatesAutoresizingMaskIntoConstraints = false
-       return detailUserName
-   }()
+        detailUserName.leftView = detailUserGenderImage
+        detailUserName.leftViewMode = .always
+        detailUserName.font = UIFont.systemFont(ofSize: Metric.fontSize)
+        detailUserName.translatesAutoresizingMaskIntoConstraints = false
+        return detailUserName
+    }()
 
     lazy var detailGenderPicker: UIPickerView = {
         let detailGenderPicker = UIPickerView()
-       // detailGenderPicker.endEditing(true)
         detailGenderPicker.backgroundColor = .white
         return detailGenderPicker
     }()
 
-
+    // MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupHierarchy()
         setupLayout()
         detailGenderPicker.delegate = self
         detailGenderPicker.dataSource = self
-
         detailGenderTextField.inputView = detailGenderPicker
-
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Functions
     private func setupHierarchy() {
         addSubview(detailPhoto)
-        addSubview(stackUserName)
+        addSubview(stackMainVertical)
+
+        stackMainVertical.addArrangedSubview(stackUserName)
+        stackMainVertical.addArrangedSubview(separatorFirst)
+        stackMainVertical.addArrangedSubview(stackBirthday)
+        stackMainVertical.addArrangedSubview(separatorSecond)
+        stackMainVertical.addArrangedSubview(stackPicker)
+        stackMainVertical.addArrangedSubview(separatorThird)
+
         stackUserName.addArrangedSubview(detailUserNameImage)
         stackUserName.addArrangedSubview(detailUserName)
-        addSubview(separatorFirst)
-        addSubview(detailUserBirthDayImage)
-        addSubview(datePicker)
-        addSubview(separatorSecond)
-        addSubview(detailUserGenderImage)
-      //  addSubview(genderPicker)
-        addSubview(detailGenderTextField)
-        addSubview(separatorThird)
-
-
+        stackBirthday.addArrangedSubview(detailUserBirthDayImage)
+        stackBirthday.addArrangedSubview(datePicker)
+        stackPicker.addArrangedSubview(detailUserGenderImage)
+        stackPicker.addArrangedSubview(detailGenderTextField)
     }
 
     private func setupLayout() {
-
         NSLayoutConstraint.activate([
-            detailPhoto.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
+            detailPhoto.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.photoTop),
             detailPhoto.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            detailPhoto.widthAnchor.constraint(equalToConstant: 200),
-            detailPhoto.heightAnchor.constraint(equalToConstant: 200),
+            detailPhoto.widthAnchor.constraint(equalToConstant: Metric.photoWidth),
+            detailPhoto.heightAnchor.constraint(equalToConstant: Metric.photoHeight),
 
-            stackUserName.topAnchor.constraint(equalTo: detailPhoto.bottomAnchor, constant: 30),
-            stackUserName.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            stackUserName.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-
-            separatorFirst.topAnchor.constraint(equalTo: stackUserName.bottomAnchor, constant: 5),
-            separatorFirst.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            separatorFirst.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            separatorFirst.heightAnchor.constraint(equalToConstant: 2),
-
-//            stackPicker.topAnchor.constraint(equalTo: separatorFirst.bottomAnchor, constant: 5),
-//            stackPicker.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-//            stackPicker.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-
-            detailUserBirthDayImage.topAnchor.constraint(equalTo: stackUserName.bottomAnchor, constant: 15),
-            detailUserBirthDayImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8),
-            detailUserBirthDayImage.widthAnchor.constraint(equalTo: detailUserNameImage.widthAnchor),
-
-            datePicker.topAnchor.constraint(equalTo: stackUserName.bottomAnchor, constant: 14),
-            datePicker.leadingAnchor.constraint(equalTo: detailUserBirthDayImage.trailingAnchor, constant: 1),
-                        datePicker.widthAnchor.constraint(equalToConstant: 100),
-                        datePicker.heightAnchor.constraint(equalToConstant: 30),
-
-            separatorSecond.topAnchor.constraint(equalTo: separatorFirst.bottomAnchor, constant: 45),
-            separatorSecond.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            separatorSecond.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            separatorSecond.heightAnchor.constraint(equalToConstant: 2),
-
-            detailUserGenderImage.topAnchor.constraint(equalTo: separatorSecond.bottomAnchor, constant: 10),
-            detailUserGenderImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8),
-            detailUserGenderImage.widthAnchor.constraint(equalTo: detailUserNameImage.widthAnchor),
-
-            detailGenderTextField.topAnchor.constraint(equalTo: separatorSecond.bottomAnchor, constant: 10),
-            detailGenderTextField.leadingAnchor.constraint(equalTo: detailUserGenderImage.trailingAnchor, constant: 1),
-            detailGenderTextField.widthAnchor.constraint(equalToConstant: 150),
-            detailGenderTextField.heightAnchor.constraint(equalToConstant: 30),
-
-            separatorThird.topAnchor.constraint(equalTo: separatorSecond.bottomAnchor, constant: 45),
-            separatorThird.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            separatorThird.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            separatorThird.heightAnchor.constraint(equalToConstant: 2),
+            stackMainVertical.topAnchor.constraint(equalTo: detailPhoto.bottomAnchor, constant: Metric.mainStackTop),
+            stackMainVertical.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Metric.mainStackLeading),
+            stackMainVertical.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Metric.mainStackTrailing),
         ])
     }
 }
 
+    // MARK: - extensions
 extension DetailScreenView: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -303,5 +191,39 @@ extension DetailScreenView: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         detailGenderTextField.text = gender[row] // для присвоения значения выбранному результату
         detailGenderTextField.resignFirstResponder() // для выхода из пикера, после выбора
+    }
+}
+
+extension DetailScreenView {
+
+    enum Metric {
+        static let photoTop: CGFloat = 40
+        static let photoWidth: CGFloat = 200
+        static let photoHeight: CGFloat = 200
+
+        static let mainStackTop: CGFloat = 30
+        static let mainStackLeading: CGFloat = 10
+        static let mainStackTrailing: CGFloat = -10
+        static let stackSpacingBase: CGFloat = 10
+        static let stackPickerSpacing: CGFloat = 2
+
+        static let detailPhotoCornerRadius: CGFloat = 125
+        static let fontSize: CGFloat = 20
+        static let datePickerCornerRadius: CGFloat = 16
+    }
+
+    enum MetricStrings {
+        static let men = "Мужчина"
+        static let women = "Женщина"
+
+        static let buttonEditTitle = "Edit"
+        static let userNamePlaceholder = "Name"
+        static let detailGenderPlaceholder = "Gender"
+        static let datePickerFormat = "MM.dd.yyyy"
+
+        static let detailPhotoImage = "photo.circle.fill"
+        static let detailUserNameImage = "person.fill"
+        static let detailUserNameBirthdayImage = "birthday.cake.fill"
+        static let detailUserNameGenderImage = "figure.dress.line.vertical.figure"
     }
 }

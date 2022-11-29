@@ -23,6 +23,9 @@
 		9231B3002923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9231B2FE2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld */; };
 		9231B3022923E72C00B58136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9231B3012923E72C00B58136 /* Assets.xcassets */; };
 		9231B3052923E72C00B58136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9231B3032923E72C00B58136 /* LaunchScreen.storyboard */; };
+		929F34162934DB6100042448 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F34152934DB6100042448 /* Separator.swift */; };
+		929F343229354DC200042448 /* ImageIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F343129354DC200042448 /* ImageIcon.swift */; };
+		929F34342935FFA800042448 /* StackUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929F34332935FFA700042448 /* StackUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		9231B3012923E72C00B58136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9231B3042923E72C00B58136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9231B3062923E72C00B58136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		929F34152934DB6100042448 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
+		929F343129354DC200042448 /* ImageIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIcon.swift; sourceTree = "<group>"; };
+		929F34332935FFA700042448 /* StackUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +66,6 @@
 		92171EEC2924DF2E00E61709 /* MainScreenModules */ = {
 			isa = PBXGroup;
 			children = (
-				9231B30F2923E78B00B58136 /* Model */,
 				9231B3102923E79600B58136 /* View */,
 				9231B3112923E7A200B58136 /* Presenter */,
 			);
@@ -78,18 +83,10 @@
 		92171EEE2924DFE000E61709 /* DetailScreenModules */ = {
 			isa = PBXGroup;
 			children = (
-				92171EEF2924DFFE00E61709 /* Model */,
 				92171EF02924E00600E61709 /* View */,
 				92171EF12924E01100E61709 /* Presenter */,
 			);
 			path = DetailScreenModules;
-			sourceTree = "<group>";
-		};
-		92171EEF2924DFFE00E61709 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		92171EF02924E00600E61709 /* View */ = {
@@ -129,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				922A91B0292E3C02008E2B81 /* TextFieldWithPadding.swift */,
+				929F34152934DB6100042448 /* Separator.swift */,
+				929F343129354DC200042448 /* ImageIcon.swift */,
+				929F34332935FFA700042448 /* StackUI.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,10 +136,6 @@
 		9231B2E92923E72800B58136 = {
 			isa = PBXGroup;
 			children = (
-				922A91B52931714F008E2B81 /* ViewBeforeStart.swift */,
-				922A91B329315D0C008E2B81 /* french.mov */,
-				922A91A3292BAA1C008E2B81 /* User+CoreDataClass.swift */,
-				922A91A4292BAA1C008E2B81 /* User+CoreDataProperties.swift */,
 				9231B2F42923E72800B58136 /* iOS7-HW22-Kholodkov Denis */,
 				9231B2F32923E72800B58136 /* Products */,
 			);
@@ -158,7 +154,6 @@
 			children = (
 				9231B30D2923E76D00B58136 /* Resources */,
 				9231B30C2923E76300B58136 /* Sources */,
-				9231B2FE2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld */,
 			);
 			path = "iOS7-HW22-Kholodkov Denis";
 			sourceTree = "<group>";
@@ -178,6 +173,8 @@
 		9231B30D2923E76D00B58136 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				929F343529363BE200042448 /* CoreData */,
+				929F343629363C1100042448 /* StartWithVideo */,
 				9231B3012923E72C00B58136 /* Assets.xcassets */,
 				9231B3032923E72C00B58136 /* LaunchScreen.storyboard */,
 				9231B3062923E72C00B58136 /* Info.plist */,
@@ -191,13 +188,6 @@
 				9231B2F52923E72800B58136 /* AppDelegate.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		9231B30F2923E78B00B58136 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		9231B3102923E79600B58136 /* View */ = {
@@ -223,6 +213,25 @@
 				92171EF729250F5E00E61709 /* MainScreenView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		929F343529363BE200042448 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				922A91A3292BAA1C008E2B81 /* User+CoreDataClass.swift */,
+				922A91A4292BAA1C008E2B81 /* User+CoreDataProperties.swift */,
+				9231B2FE2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		929F343629363C1100042448 /* StartWithVideo */ = {
+			isa = PBXGroup;
+			children = (
+				922A91B52931714F008E2B81 /* ViewBeforeStart.swift */,
+				922A91B329315D0C008E2B81 /* french.mov */,
+			);
+			path = StartWithVideo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,13 +308,16 @@
 				922A91B62931714F008E2B81 /* ViewBeforeStart.swift in Sources */,
 				922A91AC292C306F008E2B81 /* DetailScreenView.swift in Sources */,
 				9231B3002923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld in Sources */,
+				929F34162934DB6100042448 /* Separator.swift in Sources */,
 				9231B2FA2923E72800B58136 /* MainViewController.swift in Sources */,
 				922A91A6292BAA1C008E2B81 /* User+CoreDataProperties.swift in Sources */,
 				9231B2F62923E72800B58136 /* AppDelegate.swift in Sources */,
+				929F343229354DC200042448 /* ImageIcon.swift in Sources */,
 				92171EF829250F5E00E61709 /* MainScreenView.swift in Sources */,
 				922A91A8292BD0AD008E2B81 /* CoreDataManager.swift in Sources */,
 				922A91AA292C2E75008E2B81 /* DetailViewController.swift in Sources */,
 				922A91B1292E3C02008E2B81 /* TextFieldWithPadding.swift in Sources */,
+				929F34342935FFA800042448 /* StackUI.swift in Sources */,
 				922A91AE292C308D008E2B81 /* DetailScreenPresenter.swift in Sources */,
 				92171EFD29266ED100E61709 /* MainScreenPresenter.swift in Sources */,
 				922A91A5292BAA1C008E2B81 /* User+CoreDataClass.swift in Sources */,
