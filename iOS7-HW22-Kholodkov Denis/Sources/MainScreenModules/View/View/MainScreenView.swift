@@ -39,6 +39,7 @@ class MainScreenView: UIView {
         return mainButton
     }()
 
+
     lazy var mainTableView: UITableView = {
         let mainTableView = UITableView(frame: .zero, style: .insetGrouped)
         mainTableView.backgroundColor = .systemGray5
@@ -73,6 +74,7 @@ class MainScreenView: UIView {
     private func setupLayout() {
         NSLayoutConstraint.activate([
             mainTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.insetTwenty),
+
                        mainTextField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Metric.insetTwenty),
                        mainTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Metric.insetMinusTwenty),
                        mainTextField.heightAnchor.constraint(equalToConstant: Metric.insetHeight),
@@ -86,6 +88,7 @@ class MainScreenView: UIView {
                        mainTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
                        mainTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
                        mainTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+
         ])
     }
 }

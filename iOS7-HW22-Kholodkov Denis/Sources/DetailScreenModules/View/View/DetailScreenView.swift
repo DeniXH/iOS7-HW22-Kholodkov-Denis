@@ -45,10 +45,12 @@ class DetailScreenView: UIView {
     lazy var stackMainVertical = StackUI(axis: .vertical,
                                          spacing: Metric.stackSpacingBase)
 
+
     // MARK: - Separators
     lazy var separatorFirst = Separator()
     lazy var separatorSecond = Separator()
     lazy var separatorThird = Separator()
+
 
     // MARK: - User name stack
     lazy var stackUserName = StackUI(axis: .horizontal,
@@ -73,9 +75,11 @@ class DetailScreenView: UIView {
         print("textField touches")
     }
 
+
     // MARK: - Birthday Stack
     lazy var stackBirthday = StackUI(axis: .horizontal,
                                      spacing: Metric.stackSpacingBase)
+
 
     lazy var detailUserBirthDayImage = ImageIcon(imageName: MetricStrings.detailUserNameBirthdayImage)
 
@@ -100,12 +104,14 @@ class DetailScreenView: UIView {
         print("Selected value \(selectedDate)")
     }
 
+
     // MARK: - Gender part
     lazy var stackPicker = StackUI(axis: .horizontal,
                                    spacing: Metric.stackPickerSpacing)
 
 
     lazy var detailUserGenderImage = ImageIcon(imageName: MetricStrings.detailUserNameGenderImage)
+
 
     lazy var detailGenderTextField: UITextField = {
         let detailUserName = TextFieldWithPadding()
@@ -142,7 +148,9 @@ class DetailScreenView: UIView {
     // MARK: - Functions
     private func setupHierarchy() {
         addSubview(detailPhoto)
+
         addSubview(stackMainVertical)
+
 
         stackMainVertical.addArrangedSubview(stackUserName)
         stackMainVertical.addArrangedSubview(separatorFirst)
@@ -163,12 +171,14 @@ class DetailScreenView: UIView {
         NSLayoutConstraint.activate([
             detailPhoto.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metric.photoTop),
             detailPhoto.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+
             detailPhoto.widthAnchor.constraint(equalToConstant: Metric.photoWidth),
             detailPhoto.heightAnchor.constraint(equalToConstant: Metric.photoHeight),
 
             stackMainVertical.topAnchor.constraint(equalTo: detailPhoto.bottomAnchor, constant: Metric.mainStackTop),
             stackMainVertical.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Metric.mainStackLeading),
             stackMainVertical.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Metric.mainStackTrailing),
+
         ])
     }
 }
