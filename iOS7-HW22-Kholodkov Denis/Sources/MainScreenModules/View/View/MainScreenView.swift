@@ -17,7 +17,6 @@ protocol OutputMainScreenViewProtocol {
 class MainScreenView: UIView {
 
     // MARK: - UI Elements
-
     lazy var mainTextField: UITextField = {
         let mainTextField = UITextField()
         mainTextField.textAlignment = .center
@@ -62,7 +61,6 @@ class MainScreenView: UIView {
     }
 
     // MARK: - functions
-
     private func setupHierarchy() {
         addSubview(mainTextField)
         addSubview(mainButton)
@@ -88,7 +86,6 @@ class MainScreenView: UIView {
                        mainTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
                        mainTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
                        mainTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
-
         ])
     }
 }

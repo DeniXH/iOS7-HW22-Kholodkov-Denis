@@ -20,31 +20,21 @@ class DetailScreenView: UIView {
     // MARK: - UI Elements
     lazy var rightButtonItem: UIBarButtonItem = {
         let button = UIBarButtonItem()
-        button.action = #selector(editAction)
-        button.target = self
         button.title = MetricStrings.buttonEditTitle
         return button
     }()
 
-    @objc func editAction(){
-        detailUserName.isEnabled.toggle()
-    }
-
     lazy var detailPhoto: UIImageView = {
         let detailImageView = UIImageView(image: UIImage(systemName: MetricStrings.detailPhotoImage))
-        //        let detailimageTapped = UITapGestureRecognizer(target: self, action: #selector(detailimageTapped))
-        //detailimageView.addGestureRecognizer(detailimageTapped)
         detailImageView.clipsToBounds = true
         detailImageView.layer.cornerRadius = Metric.detailPhotoCornerRadius
         detailImageView.translatesAutoresizingMaskIntoConstraints = false
         return detailImageView
     }()
 
-
     // MARK: - Vertical main stack
     lazy var stackMainVertical = StackUI(axis: .vertical,
                                          spacing: Metric.stackSpacingBase)
-
 
     // MARK: - Separators
     lazy var separatorFirst = Separator()
@@ -62,7 +52,6 @@ class DetailScreenView: UIView {
         let detailUserName = TextFieldWithPadding()
         detailUserName.placeholder = MetricStrings.userNamePlaceholder
         detailUserName.isEnabled = isOn
-        detailUserName.addTarget(self, action: #selector(tapUserName), for: .touchDown)
         detailUserName.leftView = detailUserNameImage
         detailUserName.leftViewMode = .always
         detailUserName.font = UIFont.systemFont(ofSize: Metric.fontSize)
@@ -70,16 +59,9 @@ class DetailScreenView: UIView {
         return detailUserName
     }()
 
-    @objc func tapUserName() {
-        //   detailUserName.isEnabled.toggle()
-        print("textField touches")
-    }
-
-
     // MARK: - Birthday Stack
     lazy var stackBirthday = StackUI(axis: .horizontal,
                                      spacing: Metric.stackSpacingBase)
-
 
     lazy var detailUserBirthDayImage = ImageIcon(imageName: MetricStrings.detailUserNameBirthdayImage)
 
@@ -89,11 +71,11 @@ class DetailScreenView: UIView {
         datepicker.backgroundColor = UIColor.clear
         datepicker.preferredDatePickerStyle = .automatic
         datepicker.datePickerMode = .date
+        datepicker.isEnabled = isOn
         datepicker.layer.cornerRadius = Metric.datePickerCornerRadius
         datepicker.contentHorizontalAlignment = .leading // for left orietation near icon
         datepicker.translatesAutoresizingMaskIntoConstraints = false
         datepicker.addTarget(self, action: #selector(pickerTapped), for: .valueChanged)
-        //   datePicker.subviews.forEach({ $0.subviews.forEach({ $0.removeFromSuperview() }) })
         return datepicker
     }()
 
@@ -109,15 +91,12 @@ class DetailScreenView: UIView {
     lazy var stackPicker = StackUI(axis: .horizontal,
                                    spacing: Metric.stackPickerSpacing)
 
-
     lazy var detailUserGenderImage = ImageIcon(imageName: MetricStrings.detailUserNameGenderImage)
-
 
     lazy var detailGenderTextField: UITextField = {
         let detailUserName = TextFieldWithPadding()
         detailUserName.placeholder = MetricStrings.detailGenderPlaceholder
-        // detailUserName.isEnabled = isOn
-        detailUserName.addTarget(self, action: #selector(tapUserName), for: .touchDown)
+        detailUserName.isEnabled = isOn
         detailUserName.leftView = detailUserGenderImage
         detailUserName.leftViewMode = .always
         detailUserName.font = UIFont.systemFont(ofSize: Metric.fontSize)
@@ -148,9 +127,7 @@ class DetailScreenView: UIView {
     // MARK: - Functions
     private func setupHierarchy() {
         addSubview(detailPhoto)
-
         addSubview(stackMainVertical)
-
 
         stackMainVertical.addArrangedSubview(stackUserName)
         stackMainVertical.addArrangedSubview(separatorFirst)
@@ -178,7 +155,6 @@ class DetailScreenView: UIView {
             stackMainVertical.topAnchor.constraint(equalTo: detailPhoto.bottomAnchor, constant: Metric.mainStackTop),
             stackMainVertical.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Metric.mainStackLeading),
             stackMainVertical.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Metric.mainStackTrailing),
-
         ])
     }
 }
@@ -204,6 +180,7 @@ extension DetailScreenView: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
+// MARK: - extension
 extension DetailScreenView {
 
     enum Metric {
@@ -227,6 +204,7 @@ extension DetailScreenView {
         static let women = "Женщина"
 
         static let buttonEditTitle = "Edit"
+        static let buttonSaveTitle = "Save"
         static let userNamePlaceholder = "Name"
         static let detailGenderPlaceholder = "Gender"
         static let datePickerFormat = "MM.dd.yyyy"

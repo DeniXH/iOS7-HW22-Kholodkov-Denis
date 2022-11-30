@@ -66,8 +66,8 @@
 		92171EEC2924DF2E00E61709 /* MainScreenModules */ = {
 			isa = PBXGroup;
 			children = (
-				9231B3102923E79600B58136 /* View */,
 				9231B3112923E7A200B58136 /* Presenter */,
+				9231B3102923E79600B58136 /* View */,
 			);
 			path = MainScreenModules;
 			sourceTree = "<group>";
@@ -83,8 +83,8 @@
 		92171EEE2924DFE000E61709 /* DetailScreenModules */ = {
 			isa = PBXGroup;
 			children = (
-				92171EF02924E00600E61709 /* View */,
 				92171EF12924E01100E61709 /* Presenter */,
+				92171EF02924E00600E61709 /* View */,
 			);
 			path = DetailScreenModules;
 			sourceTree = "<group>";
@@ -161,9 +161,8 @@
 		9231B30C2923E76300B58136 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				922A91AF292E3BD7008E2B81 /* Extensions */,
-				922A91A7292BD0AD008E2B81 /* CoreDataManager.swift */,
 				9231B30E2923E77F00B58136 /* App */,
+				922A91AF292E3BD7008E2B81 /* Extensions */,
 				92171EEC2924DF2E00E61709 /* MainScreenModules */,
 				92171EEE2924DFE000E61709 /* DetailScreenModules */,
 			);
@@ -220,6 +219,7 @@
 			children = (
 				922A91A3292BAA1C008E2B81 /* User+CoreDataClass.swift */,
 				922A91A4292BAA1C008E2B81 /* User+CoreDataProperties.swift */,
+				922A91A7292BD0AD008E2B81 /* CoreDataManager.swift */,
 				9231B2FE2923E72800B58136 /* iOS7_HW22_Kholodkov_Denis.xcdatamodeld */,
 			);
 			path = CoreData;

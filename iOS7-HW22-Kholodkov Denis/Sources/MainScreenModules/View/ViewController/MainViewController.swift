@@ -10,115 +10,60 @@ import CoreData
 import AVKit
 import AVFoundation
 
-protocol InputMainViewProtocol {
-  //  var mainScreenView: OutputMainScreenViewProtocol? { get set }
-    var presenter: OutputMainScreenPresenterProtocol? { get set }
+protocol InputMainViewProtocol: Any {
+      var presenter: OutputMainScreenPresenterProtocol? { get set }
 }
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, InputMainViewProtocol {
 
     // MARK: - varibles
-
-   // var mainScreenView: OutputMainScreenViewProtocol?
     var viewBefore = ViewBeforeStart()
     var mainScreenView = MainScreenView()
     var presenter: OutputMainScreenPresenterProtocol?
-    var a = ""
-
-    var usersArray = [String]()
-
-    // TODO: - сделать в init массив с пользователями, а не просто по середине кода
 
     // MARK: - LifeCycle
-
     override func loadView() {
-//        mainScreenView = MainScreenView() as? OutputMainScreenViewProtocol
-         //as? UIView
-       view = viewBefore
+        view = viewBefore
         DispatchQueue.main.async {
-            let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "french", ofType: "mov")!))
-            let layer = AVPlayerLayer(player: player)
-            layer.frame = self.view.bounds
-            layer.videoGravity = .resizeAspectFill
-            player.volume = 3
-            self.view.layer.addSublayer(layer)
-            player.play()
-
+            self.videoGo()
         }
     }
 
-// MARK: make by player
-//        let viewPlayer = AVPlayerViewController()
-//        viewPlayer.player = player
-//        present(viewPlayer, animated: true)
-
-
+    // MARK: make video by player
+    //        let viewPlayer = AVPlayerViewController()
+    //        viewPlayer.player = player
+    //        present(viewPlayer, animated: true)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-
             self.view = self.mainScreenView
             self.view.backgroundColor = .white
             self.setNavigationController()
-            self.setCoreData()
             self.UIElementsSettings()
+            self.presenter?.perform()
         }
     }
 
-    // MARK: - function for set CoreData
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        self.presenter = MainScreenPresenter(mainViewController: self)
+    }
 
-    func setCoreData() {
-// ниже уже после добваления conveinence init в файле User+CoreDataClass
-        let managedObject = User()
-
-        // Установка значений атрибутов,  до создания 2-х классов через Editor\ Create NSManagedObject Subclass
-//        managedObject.setValue("Oleg", forKey: "name")
-//        managedObject.setValue("Borisov", forKey: "lastName")
-        managedObject.name = "Oleg"
-        managedObject.lastName = "Borisov"
-
-        // Извлекаем значения атрибута, до создания 2-х классов через Editor\ Create NSManagedObject Subclass
-//        let name = managedObject.value(forKey: "name")
-//        let lastName = managedObject.value(forKey: "lastName")
-        let name = managedObject.name
-        let lastName = managedObject.lastName
-
-        print("\(String(describing: name))\n\(String(describing: lastName))")
-
-        // Сохранение данных, используется если НЕ создавать Manager
-       // appDelegate?.saveContext()
-        CoreDataManager.instance.saveContext()
-
-        // Извлекаем данные
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        do { // TODO: убрать force unwrap
-            let results = try CoreDataManager.instance.context.fetch(fetchRequest)
-//            for result in results as! [NSManagedObject] { // MARK: - извлечение до создания 2-х классов
-//                print("name - \(result.value(forKey: "name")!), lastName - \(result.value(forKey: "lastName")!)")
-//            }
-            for result in results as! [User] {
-                print("name - \(String(describing: result.name)), lastName - \(String(describing: result.lastName))")
-            }
-        } catch {
-            print(error)
-        }
-
-        // Удаление всех записей
-        do {
-            let results = try CoreDataManager.instance.context.fetch(fetchRequest)
-            for result in results as! [NSManagedObject] {
-                CoreDataManager.instance.context.delete(result)
-            }
-        } catch {
-         print(error)
-        }
-
-        // Обязательно нужно сохранять
-        CoreDataManager.instance.saveContext()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - functions
+    func videoGo() {
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "french", ofType: "mov")!))
+        let layer = AVPlayerLayer(player: player)
+        layer.frame = self.view.bounds
+        layer.videoGravity = .resizeAspectFill
+        player.volume = 3
+        self.view.layer.addSublayer(layer)
+        player.play()
+    }
 
     func setDelegateAndDataSource() {
         mainScreenView.mainTableView.dataSource = self
@@ -138,41 +83,41 @@ class MainViewController: UIViewController {
     }
 
     @objc func addCellToTable() {
-        guard let inputText = mainScreenView.mainTextField.text else { return }
-        //a = inputText
-        usersArray.append(inputText)
-        presenter?.addUser(user: inputText)
-
-        let indexPath = IndexPath(row: usersArray.count - 1, section: 0)
-
-        print ("\(inputText)")
-        mainScreenView.mainTableView.beginUpdates()
-            mainScreenView.mainTableView.insertRows(at: [indexPath], with: .automatic)
-        mainScreenView.mainTableView.endUpdates()
-
-        mainScreenView.mainTextField.text = "" // эта строчка делает пустой текстовое поле
-        view.endEditing(true) // не понял зачем эта строчка
+        presenter?.addUser()
     }
 }
 
-    // MARK: - extensions
-
+// MARK: - extensions
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        presenter?.fetchResultController.sections?.count ?? 0
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        usersArray.count
+        if let sections = presenter?.fetchResultController.sections {
+            return sections[section].numberOfObjects
+        } else {
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let user = presenter?.fetchResultController.object(at: indexPath) as? User
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = usersArray[indexPath.row]
+        cell.textLabel?.text = user?.fullName
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let navigationController = navigationController else { return }
-        navigationController.pushViewController(DetailViewController(), animated: true)
+        let detailPresenter = DetailScreenPresenter()
+        let detailViewController = DetailViewController(presenter: detailPresenter)
+        detailPresenter.view = detailViewController // передача в новый контроллер view
         tableView.deselectRow(at: indexPath, animated: true)
+        let user = presenter?.fetchResultController.object(at: indexPath) as? User
+        detailViewController.presenter?.user = user
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -182,11 +127,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         if editingStyle == .delete {
-            usersArray.remove(at: indexPath.row)
-
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
+            let user = presenter?.fetchResultController.object(at: indexPath) as? User ?? User()
+            CoreDataManager.instance.context.delete(user)
+            CoreDataManager.instance.saveContext()
         }
     }
 }
